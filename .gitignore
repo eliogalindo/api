@@ -1,0 +1,8 @@
+/.idea/
+/.vs/
+/bin/
+/obj/
+/storage/
+Folder.DotSettings.user
+appsettings.Development.json
+appsettings.Production.json

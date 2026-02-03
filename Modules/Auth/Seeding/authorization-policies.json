@@ -1,0 +1,100 @@
+[
+  {
+    "name": "RequireReadUsers",
+    "requiredClaims": [
+      "users.read"
+    ]
+  },
+  {
+    "name": "RequireWriteUsers",
+    "requiredClaims": [
+      "users.write"
+    ]
+  },
+  {
+    "name": "RequireDeleteUsers",
+    "requiredClaims": [
+      "users.delete"
+    ]
+  },
+  {
+    "name": "RequireReadRoles",
+    "requiredClaims": [
+      "roles.read"
+    ]
+  },
+  {
+    "name": "RequireWriteRoles",
+    "requiredClaims": [
+      "roles.write"
+    ]
+  },
+  {
+    "name": "RequireDeleteRoles",
+    "requiredClaims": [
+      "roles.delete"
+    ]
+  }, 
+  {
+    "name": "RequireReadTraces",
+    "requiredClaims": [
+      "traces.read"
+    ]
+  },
+  {
+    "name": "RequireWriteFiles",
+    "requiredClaims": [
+      "files.write"
+    ]
+  },
+  {
+    "name": "RequireReadFiles",
+    "requiredClaims": [
+      "files.read"
+    ]
+  },
+  {
+    "name": "RequireDeleteFiles",
+    "requiredClaims": [
+      "files.delete"
+    ]
+  },
+  {
+    "name": "RequireReadNotifications",
+    "requiredClaims": [
+      "notifications.read"
+    ]
+  },
+  {
+    "name": "RequireWriteNotifications",
+    "requiredClaims": [
+      "notifications.write"
+    ]
+  },
+  {
+    "name": "RequireDeleteNotifications",
+    "requiredClaims": [
+      "notifications.delete"
+    ]
+  },
+  {
+    "name": "CanManageOwnProfile",
+    "requiredClaims": [
+      "profile.read",
+      "profile.write"
+    ]
+  },
+  {
+    "name": "AdminOnly",
+    "requiredRoles": [
+      "Super Admin",
+      "Admin"
+    ]
+  },
+  {
+    "name": "AdminOrCanDelete",
+    "isAssertion": true,
+    "assertionRoleName": "Admin",
+    "assertionClaimValue": "users.delete"
+  }
+]

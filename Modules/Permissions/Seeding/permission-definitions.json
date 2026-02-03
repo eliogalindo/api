@@ -1,0 +1,82 @@
+[
+  {
+    "code": "users.read",
+    "group": 0,
+    "action": 0
+  },
+  {
+    "code": "users.write",
+    "group": 0,
+    "action": 1
+  },
+  {
+    "code": "users.delete",
+    "group": 0,
+    "action": 2
+  },
+  {
+    "code": "roles.read",
+    "group": 0,
+    "action": 0
+  },
+  {
+    "code": "roles.write",
+    "group": 0,
+    "action": 1
+  },
+  {
+    "code": "roles.delete",
+    "group": 0,
+    "action": 2
+  },
+  {
+    "code": "notifications.read",
+    "group": 1,
+    "action": 0
+  },
+  {
+    "code": "notifications.write",
+    "group": 1,
+    "action": 1
+  },
+  {
+    "code": "notifications.delete",
+    "group": 1,
+    "action": 2
+  },
+  {
+    "code": "profile.read",
+    "group": 1,
+    "action": 0
+  },
+  {
+    "code": "profile.write",
+    "group": 1,
+    "action": 1
+  },
+  {
+    "code": "profile.delete",
+    "group": 1,
+    "action": 2
+  },
+  {
+    "code": "files.read",
+    "group": 1,
+    "action": 0
+  },
+  {
+    "code": "files.write",
+    "group": 1,
+    "action": 1
+  },
+  {
+    "code": "files.delete",
+    "group": 1,
+    "action": 2
+  },
+  {
+    "code": "traces.read",
+    "group": 0,
+    "action": 0
+  }
+]

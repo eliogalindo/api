@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+                id="root"
+                xmlns="">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="EntityNotFound" xml:space="preserve">
+    <value>Entity not found</value>
+  </data>
+    <data name="Unauthorized" xml:space="preserve">
+    <value>Your are unauthorized for the requested service</value>
+  </data>
+    <data name="InvalidCredentials" xml:space="preserve">
+    <value>Invalid credentials</value>
+  </data>
+    <data name="AccountLocked" xml:space="preserve">
+    <value>User account is locked</value>
+  </data>
+    <data name="AccountInactive" xml:space="preserve">
+    <value>User account is not active</value>
+  </data>
+    <data name="AuthenticationFailed" xml:space="preserve">
+    <value>Authentication failed</value>
+  </data>
+    <data name="InternalError" xml:space="preserve">
+    <value>An internal error occurred</value>
+  </data>
+    <data name="TooManyRequests" xml:space="preserve">
+    <value>Too many requests, please try later</value>
+  </data>
+    <data name="UserNotFound" xml:space="preserve">
+    <value>User not found</value>
+  </data>
+    <data name="RoleFound" xml:space="preserve">
+    <value>Role not found</value>
+  </data>
+    <data name="RolesNotFound" xml:space="preserve">
+    <value>The selected roles do not exist</value>
+  </data>
+    <data name="PermissionsNotFound" xml:space="preserve">
+    <value>The selected permissions do not exist</value>
+  </data>
+    <data name="UsernameInUse" xml:space="preserve">
+    <value>Username '{0}' is already in use</value>
+  </data>
+    <data name="EmailInUse" xml:space="preserve">
+    <value>Email '{0}' is already in use</value>
+  </data>
+    <data name="PhoneInUse" xml:space="preserve">
+    <value>Phone number '{0}' is already in use</value>
+  </data>
+    <data name="DenominationInUse" xml:space="preserve">
+    <value>The denomination '{0}' is already in use</value>
+  </data>
+    <data name="CreateUserError" xml:space="preserve">
+    <value>An error occurred while creating the user</value>
+  </data>
+    <data name="UpdateUserError" xml:space="preserve">
+    <value>An error occurred while updating the user</value>
+  </data>
+    <data name="CreateRoleError" xml:space="preserve">
+    <value>An error occurred while creating the role</value>
+  </data>
+    <data name="UpdateRoleError" xml:space="preserve">
+    <value>An error occurred while updating the role</value>
+  </data>
+    <data name="InvalidVerificationCode" xml:space="preserve">
+    <value>Invalid verification code</value>
+  </data>
+    <data name="VerificationEmailFailed" xml:space="preserve">
+    <value>An error occured while sending the verification email</value>
+  </data>
+    <data name="PasswordResetEmailFailed" xml:space="preserve">
+  <value>An error occured while sending the reset password email</value>
+  </data>
+    <data name="CreateVerificationCodeFailed" xml:space="preserve">
+    <value>An error occurred while creating the verification code</value>
+  </data>
+    <data name="UpdateVerificationCodeFailed" xml:space="preserve">
+    <value>An error occurred while updating the verification code</value>
+  </data>
+    <data name="EmailVerificationPending" xml:space="preserve">
+    <value>Email verification pending. A new verification email was sent</value>
+  </data>
+    <data name="EmailAlreadyVerified" xml:space="preserve">
+    <value>Your email is already verified</value>
+  </data>
+    <data name="InvalidPassword" xml:space="preserve">
+    <value>Invalid password</value>
+  </data>
+    <data name="RequestTimeout" xml:space="preserve">
+    <value>Request timed out</value>
+  </data>
+    <data name="RequestCancelled" xml:space="preserve">
+    <value>Request cancelled</value>
+  </data>
+    <data name="UserRegistered" xml:space="preserve">
+    <value>The user {0} has been registered with the email {1}</value>
+  </data>
+    <data name="NotificationNotFound" xml:space="preserve">
+    <value>Notification not found</value>
+  </data>
+    <data name="NotificationsNotFound" xml:space="preserve">
+    <value>Notifications not found</value>
+  </data>
+    <data name="CreateUserTrace" xml:space="preserve">
+    <value>The user: '{0}' has created a new user with username: '{1}' and email: '{2}'</value>
+  </data>
+    <data name="UpdateUserTrace" xml:space="preserve">
+    <value>The user: '{0}' has updated the user with username: '{1}' and email: '{2}'</value>
+  </data>
+    <data name="DeleteUserTrace" xml:space="preserve">
+    <value>The user: '{0}' has deleted the user with username: '{1}' and email: '{2}'</value>
+  </data>
+    <data name="CreateRoleTrace" xml:space="preserve">
+    <value>The user: '{0}' has created a new role with denomination: '{1}'</value>
+  </data>
+    <data name="UpdateRoleTrace" xml:space="preserve">
+    <value>The user: '{0}' has updated the role with denomination: '{1}'</value>
+  </data>
+    <data name="DeleteRoleTrace" xml:space="preserve">
+    <value>The user: '{0}' has deleted the role with denomination: '{1}'</value>
+  </data>
+</root>
