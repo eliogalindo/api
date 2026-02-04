@@ -14,6 +14,10 @@ builder.Services.AddForwardedHeaders(builder.Configuration);
 
 builder.Services.AddControllers();
 
+// Add Swagger
+builder.Services.AddEndpointsApiExplorer(); 
+builder.Services.AddSwaggerGen();
+
 // Add the queue and background services
 builder.Services.AddSingleton<INotificationsQueueService, NotificationsQueueService>();
 builder.Services.AddHostedService<NotificationsQueueProcessorService>();
@@ -48,7 +52,7 @@ builder.Services.AddEmailConfiguration(builder.Configuration);
 builder.Services.AddRateLimiting();
 
 // Add Output Cache configuration
-builder.Services.AddOutputCache(builder.Configuration);
+//builder.Services.AddOutputCache(builder.Configuration);
 
 var app = builder.Build(); // Build the app after adding services
 
@@ -67,7 +71,10 @@ app.UseStaticFiles(new StaticFileOptions
 });
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment()) app.MapOpenApi();
+if (app.Environment.IsDevelopment()) {
+    app.UseSwagger(); 
+    app.UseSwaggerUI();
+}
 
 // Enables routing
 app.UseRouting();
@@ -88,7 +95,7 @@ app.UseAuthorization();
 app.MapGroup("/api/v1/").MapControllers();
 
 // Add Output Cache middleware
-app.UseOutputCache();
+//app.UseOutputCache();
 
 // Map SignalR hubs
 app.UseSignalREndpoints();
