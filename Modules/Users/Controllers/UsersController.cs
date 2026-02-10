@@ -1,18 +1,20 @@
-using System.Security.Claims;
 using api.Core.Controllers;
 using api.Core.DTOs;
 using api.Core.Models;
 using api.Modules.Localization.Interfaces.Services;
 using api.Modules.Users.DTOs;
 using api.Modules.Users.Interfaces.Services;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace api.Modules.Users.Controllers;
 
-[Authorize]
 [ApiController]
-[Route("[controller]")]
+[Authorize]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class UsersController(IUsersService usersService, ILocalizationService localizationService)
     : LocalizedControllerBase(localizationService)
 

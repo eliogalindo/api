@@ -1,20 +1,22 @@
-using System.Security.Claims;
 using api.Core.Controllers;
 using api.Core.Models;
 using api.Modules.Auth.DTOs;
 using api.Modules.Auth.Interfaces.Services;
 using api.Modules.Localization.Interfaces.Services;
 using api.Modules.Users.DTOs;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
+using System.Security.Claims;
 
 namespace api.Modules.Auth.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class AuthController(IAuthService authService, ILocalizationService localizationService)
     : LocalizedControllerBase(localizationService)
 

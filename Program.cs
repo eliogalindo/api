@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using api.Core.Extensions;
 using api.Modules.Auth.Extensions;
 using api.Modules.Email.Extensions;
@@ -36,6 +37,32 @@ builder.Services.AddDatabaseConfiguration(builder.Configuration);
 // Add app services
 builder.Services.AddApplicationServices();
 
+builder.Services.AddApiVersioning(options =>
+{
+    // Sets the default version e.g. 1.0
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+
+    // Reports the supported versions on the response headers (api-supported-versions)
+    options.ReportApiVersions = true;
+
+    // If the client doesn't specify the version, sets the default
+    options.AssumeDefaultVersionWhenUnspecified = true;
+
+    // Reads the version from the URL (e.g.: /v1/...) or from the Header (X-Api-Version)
+    options.ApiVersionReader = ApiVersionReader.Combine(
+        new UrlSegmentApiVersionReader(),
+        new HeaderApiVersionReader("X-Api-Version")
+    );
+})
+.AddApiExplorer(options =>
+{
+    // Format group for Swagger (e.g.: 'v1', 'v2')
+    options.GroupNameFormat = "'v'VVV";
+
+    // Replace the {version} parameter for Swagger routes
+    options.SubstituteApiVersionInUrl = true;
+});
+
 // Cookie-based authentication configuration
 builder.Services.AddCookieAuthentication(builder.Configuration);
 
@@ -56,6 +83,7 @@ builder.Services.AddRateLimiting();
 
 var app = builder.Build(); // Build the app after adding services
 
+// Runs migrations on application startup
 await app.MigrateDatabase();
 
 // Enables UseForwardedHeaders middleware
@@ -92,7 +120,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // Map controllers
-app.MapGroup("/api/v1/").MapControllers();
+app.MapControllers();
 
 // Add Output Cache middleware
 //app.UseOutputCache();

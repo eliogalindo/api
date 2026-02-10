@@ -1,16 +1,18 @@
-using System.Security.Claims;
 using api.Core.Controllers;
 using api.Modules.Localization.Interfaces.Services;
 using api.Modules.Notifications.DTOs;
 using api.Modules.Notifications.Interfaces.Services;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace api.Modules.Notifications.Controllers;
 
-[Authorize]
 [ApiController]
-[Route("[controller]")]
+[Authorize]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class NotificationsController(
     ILocalizationService localizationService,
     INotificationsService notificationsService)

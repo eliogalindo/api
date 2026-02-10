@@ -16,15 +16,14 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.1" />
+        <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.1" />
         <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
         <PackageReference Include="Handlebars.Net" Version="2.1.6" />
         <PackageReference Include="MailKit" Version="4.14.1" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.3.9" />
-        <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.3.9" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="10.0.2" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
         <PackageReference Include="Microsoft.AspNetCore.OutputCaching.StackExchangeRedis" Version="10.0.2" />
-        <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.2.9" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.2" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="10.0.2" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="10.0.2" />
@@ -38,12 +37,11 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.2" />
         <PackageReference Include="System.Linq.Dynamic.Core" Version="1.7.1" />
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Core\Migrations\" />
         <Folder Include="Modules\Files\Interfaces\" />
     </ItemGroup>
 

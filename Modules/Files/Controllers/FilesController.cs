@@ -1,13 +1,15 @@
 using api.Modules.Files.DTOs;
 using api.Modules.Files.Interfaces.Services;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Modules.Files.Controllers;
 
-[Authorize]
 [ApiController]
-[Route("[controller]")]
+[Authorize]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class FilesController(IFilesService filesService) : ControllerBase
 {
     [Authorize(Policy = "RequireWriteFiles")]

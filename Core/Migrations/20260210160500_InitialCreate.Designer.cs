@@ -9,10 +9,10 @@ using api.Core.Data;
 
 #nullable disable
 
-namespace api.Migrations
+namespace api.Core.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260203012605_InitialCreate")]
+    [Migration("20260210160500_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
