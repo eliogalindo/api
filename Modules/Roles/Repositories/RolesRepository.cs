@@ -53,6 +53,23 @@ public class RolesRepository(AppDbContext dbContext, ILocalizationService locali
             .ToListAsync();
     }
 
+    public async Task<List<Role>> FindAllByFilterAsync(string? filter = null, bool? enabledOnly = false)
+    {
+        var query = DbSet.OfType<ISoftDeletable>()
+            .Where(e => e.Deletable == true && e.DeletedAt == null)
+            .Cast<Role>();
+        
+        if (!string.IsNullOrWhiteSpace(filter))
+            query = query.Where(r =>
+                r.Denomination.Contains(filter) ||
+                r.Description.Contains(filter));
+
+        if (enabledOnly.HasValue)
+            query = query.Where(r => r.Enabled == enabledOnly.Value);
+
+        return await query.ToListAsync();
+    }
+    
     // Override base methods to always include permissions
     public override async Task<(List<Role>Entities, int Count)> FindAllAsync(SearchParamsDto searchParamsDto,
         bool includeRelations = false)
@@ -68,8 +85,8 @@ public class RolesRepository(AppDbContext dbContext, ILocalizationService locali
                 r.Description.Contains(searchParamsDto.Filter));
 
         // Apply filtering based on Enabled property if provided
-        if (searchParamsDto is RolesSearchParamsDto { Enabled: true or false } rolesSearchParamsDto)
-            query = query.Where(r => r.Enabled == rolesSearchParamsDto.Enabled);
+        if (searchParamsDto is RolesSearchParamsDto { EnabledOnly: true } rolesSearchParamsDto)
+            query = query.Where(r => r.Enabled == rolesSearchParamsDto.EnabledOnly);
 
         // Apply sorting
         if (!string.IsNullOrWhiteSpace(searchParamsDto.OrderBy))
