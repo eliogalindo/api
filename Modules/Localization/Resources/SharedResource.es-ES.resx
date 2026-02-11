@@ -234,4 +234,28 @@
   <data name="DeleteRoleTrace" xml:space="preserve">
     <value>El usuario: '{0}' ha eliminado el rol con denominación: '{1}'</value>
   </data>
+  <data name="FileEmpty" xml:space="preserve">
+    <value>El fichero está vacío</value>
+  </data>
+  <data name="FilesEmpty" xml:space="preserve">
+    <value>Los ficheros están vacíos</value>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>Fichero no encontrado</value>
+  </data>
+  <data name="FilesNotFound" xml:space="preserve">
+    <value>Ficheros no encontrados</value>
+  </data>
+  <data name="InvalidFileType" xml:space="preserve">
+    <value>Formato de fichero incorrecto. Solamente se permiten JPEG, PNG and GIF</value>
+  </data>
+  <data name="FileSizeExceeded" xml:space="preserve">
+    <value>El tamaño del fichero excede el límite permitido</value>
+  </data>
+  <data name="StorageDirectoryError" xml:space="preserve">
+    <value>Fallo al crear o accerder al directorio de almacenamiento</value>
+  </data>
+  <data name="FileSaveFailed" xml:space="preserve">
+    <value>Fallo al guardar el fichero</value>
+  </data>
 </root>

@@ -6,7 +6,7 @@ using api.Core.Models;
 
 namespace api.Core.Services;
 
-public abstract class Service<TEntity, TCreateDto, TUpdateDto, TDto>(
+public abstract class Service<TEntity, TCreateDto, TUpdateDto, TDto>      (
     IUnitOfWork unitOfWork,
     ILogger logger) : IService<TEntity, TCreateDto, TUpdateDto, TDto>
     where TEntity : class

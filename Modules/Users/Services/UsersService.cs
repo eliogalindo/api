@@ -164,7 +164,15 @@ public class UsersService(
             // Handle avatar upload if provided
             string? avatarPath = null;
             if (createUserDto.Avatar is not null)
-                avatarPath = await filesService.SaveFileAsync(createUserDto.Avatar, "avatars");
+            {
+                var avatarResult = await filesService.SaveFileAsync(createUserDto.Avatar, "avatars");
+                if (!avatarResult.IsSuccess)
+                {
+                    await UnitOfWork.RollbackTransactionAsync();
+                    return ServiceResult<bool>.Failure(avatarResult.ErrorKey!, avatarResult.ErrorType);
+                }
+                avatarPath = avatarResult.Data;
+            }
 
             var result = await CreateUserCoreAsync(createUserDto, rolesRelated, avatarPath);
 
@@ -218,8 +226,16 @@ public class UsersService(
             // Update the avatar path if provided
             if (updateUserDto.Avatar is not null)
             {
-                if (existingUser.Avatar is not null) filesService.DeleteFile(existingUser.Avatar);
-                existingUser.Avatar = await filesService.SaveFileAsync(updateUserDto.Avatar, "avatars");
+                if (existingUser.Avatar is not null)
+                    filesService.DeleteFile(existingUser.Avatar);
+
+                var avatarResult = await filesService.SaveFileAsync(updateUserDto.Avatar, "avatars");
+                if (!avatarResult.IsSuccess)
+                {
+                    await UnitOfWork.RollbackTransactionAsync();
+                    return ServiceResult<bool>.Failure(avatarResult.ErrorKey!, avatarResult.ErrorType);
+                }
+                existingUser.Avatar = avatarResult.Data;
             }
 
             List<Role> rolesRelated = [];
