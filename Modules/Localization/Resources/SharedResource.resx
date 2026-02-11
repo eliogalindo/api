@@ -132,4 +132,28 @@
     <data name="DeleteRoleTrace" xml:space="preserve">
     <value>The user: '{0}' has deleted the role with denomination: '{1}'</value>
   </data>
+  <data name="FileEmpty" xml:space="preserve">
+    <value>The file is empty</value>
+  </data>
+  <data name="FilesEmpty" xml:space="preserve">
+    <value>The files are empty</value>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>File not found</value>
+  </data>
+  <data name="FilesNotFound" xml:space="preserve">
+    <value>Files not found</value>
+  </data>
+  <data name="InvalidFileType" xml:space="preserve">
+    <value>Invalid file type. Only JPEG, PNG and GIF are allowed</value>
+  </data>
+  <data name="FileSizeExceeded" xml:space="preserve">
+    <value>File size exceeds the allowed limit</value>
+  </data>
+  <data name="StorageDirectoryError" xml:space="preserve">
+    <value>Failed to create or access storage directory</value>
+  </data>
+  <data name="FileSaveFailed" xml:space="preserve">
+    <value>Failed to save file</value>
+  </data>
 </root>
