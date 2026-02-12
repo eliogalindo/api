@@ -109,13 +109,8 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            RolesId = 2,
-                            PermissionsId = 15
-                        },
-                        new
-                        {
                             RolesId = 1,
-                            PermissionsId = 16
+                            PermissionsId = 15
                         });
                 });
 
@@ -293,7 +288,7 @@ namespace api.Core.Migrations
                         {
                             Id = 7,
                             Action = 0,
-                            Code = "notifications.read",
+                            Code = "profile.read",
                             CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
                             Deletable = true,
                             Group = 1
@@ -302,33 +297,6 @@ namespace api.Core.Migrations
                         {
                             Id = 8,
                             Action = 1,
-                            Code = "notifications.write",
-                            CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
-                            Deletable = true,
-                            Group = 1
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Action = 2,
-                            Code = "notifications.delete",
-                            CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
-                            Deletable = true,
-                            Group = 1
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Action = 0,
-                            Code = "profile.read",
-                            CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
-                            Deletable = true,
-                            Group = 1
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Action = 1,
                             Code = "profile.write",
                             CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
                             Deletable = true,
@@ -336,16 +304,7 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            Id = 12,
-                            Action = 2,
-                            Code = "profile.delete",
-                            CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
-                            Deletable = true,
-                            Group = 1
-                        },
-                        new
-                        {
-                            Id = 13,
+                            Id = 9,
                             Action = 0,
                             Code = "files.read",
                             CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -354,7 +313,7 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            Id = 14,
+                            Id = 10,
                             Action = 1,
                             Code = "files.write",
                             CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -363,7 +322,7 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            Id = 15,
+                            Id = 11,
                             Action = 2,
                             Code = "files.delete",
                             CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -372,7 +331,34 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            Id = 16,
+                            Id = 12,
+                            Action = 0,
+                            Code = "notifications.read",
+                            CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
+                            Deletable = true,
+                            Group = 1
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Action = 1,
+                            Code = "notifications.write",
+                            CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
+                            Deletable = true,
+                            Group = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Action = 2,
+                            Code = "notifications.delete",
+                            CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
+                            Deletable = true,
+                            Group = 1
+                        },
+                        new
+                        {
+                            Id = 15,
                             Action = 0,
                             Code = "traces.read",
                             CreatedAt = new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -466,86 +452,78 @@ namespace api.Core.Migrations
                         new
                         {
                             Id = 7,
-                            Denomination = "Read stocks",
-                            Description = "Read stocks",
+                            Denomination = "Read profile",
+                            Description = "Read user profile",
                             Locale = "en-US",
                             PermissionId = 7
                         },
                         new
                         {
                             Id = 8,
-                            Denomination = "Write stocks",
-                            Description = "Write stocks",
+                            Denomination = "Write profile",
+                            Description = "Update user profile",
                             Locale = "en-US",
                             PermissionId = 8
                         },
                         new
                         {
                             Id = 9,
-                            Denomination = "Delete stocks",
-                            Description = "Delete stocks",
+                            Denomination = "Read files",
+                            Description = "Read files",
                             Locale = "en-US",
                             PermissionId = 9
                         },
                         new
                         {
                             Id = 10,
-                            Denomination = "Read files",
-                            Description = "Read files",
+                            Denomination = "Write files",
+                            Description = "Upload files",
                             Locale = "en-US",
                             PermissionId = 10
                         },
                         new
                         {
                             Id = 11,
-                            Denomination = "Write files",
-                            Description = "Upload files",
+                            Denomination = "Delete files",
+                            Description = "Delete files",
                             Locale = "en-US",
                             PermissionId = 11
                         },
                         new
                         {
                             Id = 12,
-                            Denomination = "Delete files",
-                            Description = "Delete files",
+                            Denomination = "Read notifications",
+                            Description = "Read system notifications",
                             Locale = "en-US",
                             PermissionId = 12
                         },
                         new
                         {
                             Id = 13,
-                            Denomination = "Read notifications",
-                            Description = "Read system notifications",
+                            Denomination = "Mark notifications as read",
+                            Description = "Mark all system notifications as read",
                             Locale = "en-US",
                             PermissionId = 13
                         },
                         new
                         {
                             Id = 14,
-                            Denomination = "Mark notifications as read",
-                            Description = "Mark all system notifications as read",
+                            Denomination = "Delete notifications",
+                            Description = "Delete system notifications",
                             Locale = "en-US",
                             PermissionId = 14
                         },
                         new
                         {
                             Id = 15,
-                            Denomination = "Delete notifications",
-                            Description = "Delete system notifications",
+                            Denomination = "Read traces",
+                            Description = "Read system traces",
                             Locale = "en-US",
                             PermissionId = 15
                         },
                         new
                         {
                             Id = 16,
-                            Denomination = "Read traces",
-                            Description = "Read system traces",
-                            Locale = "en-US",
-                            PermissionId = 16
-                        },
-                        new
-                        {
-                            Id = 17,
                             Denomination = "Leer usuarios",
                             Description = "Leer todos los usuarios",
                             Locale = "es-ES",
@@ -553,7 +531,7 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            Id = 18,
+                            Id = 17,
                             Denomination = "Escribir usuarios",
                             Description = "Crear o actualizar usuarios",
                             Locale = "es-ES",
@@ -561,7 +539,7 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            Id = 19,
+                            Id = 18,
                             Denomination = "Eliminar usuarios",
                             Description = "Eliminar usuarios",
                             Locale = "es-ES",
@@ -569,7 +547,7 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            Id = 20,
+                            Id = 19,
                             Denomination = "Leer roles",
                             Description = "Leer roles",
                             Locale = "es-ES",
@@ -577,7 +555,7 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            Id = 21,
+                            Id = 20,
                             Denomination = "Escribir roles",
                             Description = "Crear o actualizar roles",
                             Locale = "es-ES",
@@ -585,7 +563,7 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            Id = 22,
+                            Id = 21,
                             Denomination = "Eliminar roles",
                             Description = "Eliminar roles",
                             Locale = "es-ES",
@@ -593,83 +571,75 @@ namespace api.Core.Migrations
                         },
                         new
                         {
-                            Id = 23,
-                            Denomination = "Leer inventarios",
-                            Description = "Leer inventarios",
+                            Id = 22,
+                            Denomination = "Leer perfil",
+                            Description = "Leer perfil de usuario",
                             Locale = "es-ES",
                             PermissionId = 7
                         },
                         new
                         {
-                            Id = 24,
-                            Denomination = "Escribir inventarios",
-                            Description = "Escribir inventarios",
+                            Id = 23,
+                            Denomination = "Escribir perfil",
+                            Description = "Actualizar perfil de usuario",
                             Locale = "es-ES",
                             PermissionId = 8
                         },
                         new
                         {
-                            Id = 25,
-                            Denomination = "Eliminar inventarios",
-                            Description = "Eliminar inventarios",
+                            Id = 24,
+                            Denomination = "Leer ficheros",
+                            Description = "Leer ficheros",
                             Locale = "es-ES",
                             PermissionId = 9
                         },
                         new
                         {
-                            Id = 26,
-                            Denomination = "Leer ficheros",
-                            Description = "Leer ficheros",
+                            Id = 25,
+                            Denomination = "Subir ficheros",
+                            Description = "Subir ficheros",
                             Locale = "es-ES",
                             PermissionId = 10
                         },
                         new
                         {
-                            Id = 27,
-                            Denomination = "Subir ficheros",
-                            Description = "Subir ficheros",
+                            Id = 26,
+                            Denomination = "Eliminar ficheros",
+                            Description = "Eliminar ficheros",
                             Locale = "es-ES",
                             PermissionId = 11
                         },
                         new
                         {
-                            Id = 28,
-                            Denomination = "Eliminar ficheros",
-                            Description = "Eliminar ficheros",
+                            Id = 27,
+                            Denomination = "Leer notificaciones",
+                            Description = "Leer notificaciones del sistema",
                             Locale = "es-ES",
                             PermissionId = 12
                         },
                         new
                         {
-                            Id = 29,
-                            Denomination = "Leer notificaciones",
-                            Description = "Leer notificaciones del sistema",
+                            Id = 28,
+                            Denomination = "Marcar notificaciones como leídas",
+                            Description = "Marcar las notificaciones del sistema como leídas",
                             Locale = "es-ES",
                             PermissionId = 13
                         },
                         new
                         {
-                            Id = 30,
-                            Denomination = "Marcar notificaciones como leídas",
-                            Description = "Marcar las notificaciones del sistema como leídas",
+                            Id = 29,
+                            Denomination = "Eliminar notificaciones",
+                            Description = "Eliminar notificaciones del sistema",
                             Locale = "es-ES",
                             PermissionId = 14
                         },
                         new
                         {
-                            Id = 31,
-                            Denomination = "Eliminar notificaciones",
-                            Description = "Eliminar notificaciones del sistema",
-                            Locale = "es-ES",
-                            PermissionId = 15
-                        },
-                        new
-                        {
-                            Id = 32,
+                            Id = 30,
                             Denomination = "Leer trazas",
                             Description = "Leer las trazas del sistema",
                             Locale = "es-ES",
-                            PermissionId = 16
+                            PermissionId = 15
                         });
                 });
 

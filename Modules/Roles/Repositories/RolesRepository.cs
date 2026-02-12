@@ -64,8 +64,8 @@ public class RolesRepository(AppDbContext dbContext, ILocalizationService locali
                 r.Denomination.Contains(filter) ||
                 r.Description.Contains(filter));
 
-        if (enabledOnly.HasValue)
-            query = query.Where(r => r.Enabled == enabledOnly.Value);
+        if (enabledOnly == true)
+            query = query.Where(r => r.Enabled == true);
 
         return await query.ToListAsync();
     }
@@ -85,8 +85,8 @@ public class RolesRepository(AppDbContext dbContext, ILocalizationService locali
                 r.Description.Contains(searchParamsDto.Filter));
 
         // Apply filtering based on Enabled property if provided
-        if (searchParamsDto is RolesSearchParamsDto { EnabledOnly: true } rolesSearchParamsDto)
-            query = query.Where(r => r.Enabled == rolesSearchParamsDto.EnabledOnly);
+        if (searchParamsDto is RolesSearchParamsDto { EnabledOnly: true })
+            query = query.Where(r => r.Enabled == true);
 
         // Apply sorting
         if (!string.IsNullOrWhiteSpace(searchParamsDto.OrderBy))
@@ -115,8 +115,7 @@ public class RolesRepository(AppDbContext dbContext, ILocalizationService locali
         // Include permissions and permission translations
         if (includeRelations)
             query = query.Include(r => r.Permissions)
-                .ThenInclude(t =>
-                    t.Translations.Where(pt => pt.Locale == _currentCulture));
+                .ThenInclude(t => t.Translations.Where(pt => pt.Locale == _currentCulture));
 
         var count = await query.CountAsync();
 
