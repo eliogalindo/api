@@ -9,4 +9,6 @@ public interface IPermissionsService : IService<Permission, CreatePermissionDto,
 {
     Task<List<PermissionDto>> FindByGroup(PermissionGroup group);
     Task<List<PermissionDto>> FindByAction(PermissionAction action);
+    Task<List<Permission>> GetAllByIdsAsync(List<int> ids);
+    Task<List<Permission>> GetAllByFilterAsync(string? filter = null, PermissionGroup? group = null, PermissionAction? action = null);
 }

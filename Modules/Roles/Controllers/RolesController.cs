@@ -35,6 +35,7 @@ public class RolesController(IRolesService rolesService, ILocalizationService lo
     [HttpGet]
     public async Task<IActionResult> FindAll([FromQuery] RolesSearchParamsDto rolesSearchParamsDto)
     {
+
         var result = await rolesService.FindAll(rolesSearchParamsDto);
 
         return HandleServiceResult(result);

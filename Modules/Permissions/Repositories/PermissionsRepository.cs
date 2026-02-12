@@ -50,6 +50,28 @@ public class PermissionsRepository(AppDbContext dbContext, ILocalizationService 
             .ToListAsync();
     }
 
+    public async Task<List<Permission>> FindAllByFilterAsync(string? filter = null, PermissionGroup? group = null, PermissionAction? action = null)
+    {
+        var query = DbSet.OfType<ISoftDeletable>()
+            .Where(e => e.Deletable == true && e.DeletedAt == null)
+            .Cast<Permission>();
+
+        if (!string.IsNullOrWhiteSpace(filter))
+            query = query.Where(p =>
+                p.Code.Contains(filter) ||
+                p.Translations.Any(t =>
+                    t.Denomination.Contains(filter) ||
+                    t.Description.Contains(filter)));
+
+        if (group.HasValue)
+            query = query.Where(p => p.Group == group.Value);
+
+        if (action.HasValue)
+            query = query.Where(p => p.Action == action.Value);
+
+        return await query.ToListAsync();
+    }
+
     // Override base methods to always include roles when needed
     public override async Task<(List<Permission>Entities, int Count)> FindAllAsync(SearchParamsDto searchParamsDto,
         bool includeRelations = false)

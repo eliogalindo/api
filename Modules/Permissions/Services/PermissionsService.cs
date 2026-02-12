@@ -45,6 +45,32 @@ public class PermissionsService(
             throw;
         }
     }
+    
+    public async Task<List<Permission>> GetAllByIdsAsync(List<int> ids)
+    {
+        try
+        {
+            return await UnitOfWork.PermissionsRepository.FindAllByIdAsync(ids);
+        }
+        catch (Exception e)
+        {
+            Logger.LogError(e, "Error finding permissions by ids");
+            throw;
+        }
+    }
+
+    public async Task<List<Permission>> GetAllByFilterAsync(string? filter = null, PermissionGroup? group = null, PermissionAction? action = null)
+    {
+        try
+        {
+            return await UnitOfWork.PermissionsRepository.FindAllByFilterAsync(filter, group, action);
+        }
+        catch (Exception e)
+        {
+            Logger.LogError(e, "Error finding permissions by filter");
+            throw;
+        }
+    }
 
     protected override Permission MapToEntity(CreatePermissionDto createDto)
     {
