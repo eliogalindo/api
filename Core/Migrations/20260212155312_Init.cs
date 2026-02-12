@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace api.Core.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -251,16 +251,15 @@ namespace api.Core.Migrations
                     { 4, 0, "roles.read", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 0, null },
                     { 5, 1, "roles.write", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 0, null },
                     { 6, 2, "roles.delete", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 0, null },
-                    { 7, 0, "notifications.read", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
-                    { 8, 1, "notifications.write", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
-                    { 9, 2, "notifications.delete", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
-                    { 10, 0, "profile.read", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
-                    { 11, 1, "profile.write", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
-                    { 12, 2, "profile.delete", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
-                    { 13, 0, "files.read", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
-                    { 14, 1, "files.write", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
-                    { 15, 2, "files.delete", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
-                    { 16, 0, "traces.read", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 0, null }
+                    { 7, 0, "profile.read", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
+                    { 8, 1, "profile.write", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
+                    { 9, 0, "files.read", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
+                    { 10, 1, "files.write", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
+                    { 11, 2, "files.delete", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
+                    { 12, 0, "notifications.read", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
+                    { 13, 1, "notifications.write", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
+                    { 14, 2, "notifications.delete", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 1, null },
+                    { 15, 0, "traces.read", new DateTime(2025, 4, 11, 12, 0, 0, 0, DateTimeKind.Utc), true, null, 0, null }
                 });
 
             migrationBuilder.InsertData(
@@ -288,32 +287,30 @@ namespace api.Core.Migrations
                     { 4, "Read roles", "Read roles", "en-US", 4 },
                     { 5, "Write roles", "Create or Update roles", "en-US", 5 },
                     { 6, "Delete roles", "Delete roles", "en-US", 6 },
-                    { 7, "Read stocks", "Read stocks", "en-US", 7 },
-                    { 8, "Write stocks", "Write stocks", "en-US", 8 },
-                    { 9, "Delete stocks", "Delete stocks", "en-US", 9 },
-                    { 10, "Read files", "Read files", "en-US", 10 },
-                    { 11, "Write files", "Upload files", "en-US", 11 },
-                    { 12, "Delete files", "Delete files", "en-US", 12 },
-                    { 13, "Read notifications", "Read system notifications", "en-US", 13 },
-                    { 14, "Mark notifications as read", "Mark all system notifications as read", "en-US", 14 },
-                    { 15, "Delete notifications", "Delete system notifications", "en-US", 15 },
-                    { 16, "Read traces", "Read system traces", "en-US", 16 },
-                    { 17, "Leer usuarios", "Leer todos los usuarios", "es-ES", 1 },
-                    { 18, "Escribir usuarios", "Crear o actualizar usuarios", "es-ES", 2 },
-                    { 19, "Eliminar usuarios", "Eliminar usuarios", "es-ES", 3 },
-                    { 20, "Leer roles", "Leer roles", "es-ES", 4 },
-                    { 21, "Escribir roles", "Crear o actualizar roles", "es-ES", 5 },
-                    { 22, "Eliminar roles", "Eliminar roles", "es-ES", 6 },
-                    { 23, "Leer inventarios", "Leer inventarios", "es-ES", 7 },
-                    { 24, "Escribir inventarios", "Escribir inventarios", "es-ES", 8 },
-                    { 25, "Eliminar inventarios", "Eliminar inventarios", "es-ES", 9 },
-                    { 26, "Leer ficheros", "Leer ficheros", "es-ES", 10 },
-                    { 27, "Subir ficheros", "Subir ficheros", "es-ES", 11 },
-                    { 28, "Eliminar ficheros", "Eliminar ficheros", "es-ES", 12 },
-                    { 29, "Leer notificaciones", "Leer notificaciones del sistema", "es-ES", 13 },
-                    { 30, "Marcar notificaciones como leídas", "Marcar las notificaciones del sistema como leídas", "es-ES", 14 },
-                    { 31, "Eliminar notificaciones", "Eliminar notificaciones del sistema", "es-ES", 15 },
-                    { 32, "Leer trazas", "Leer las trazas del sistema", "es-ES", 16 }
+                    { 7, "Read profile", "Read user profile", "en-US", 7 },
+                    { 8, "Write profile", "Update user profile", "en-US", 8 },
+                    { 9, "Read files", "Read files", "en-US", 9 },
+                    { 10, "Write files", "Upload files", "en-US", 10 },
+                    { 11, "Delete files", "Delete files", "en-US", 11 },
+                    { 12, "Read notifications", "Read system notifications", "en-US", 12 },
+                    { 13, "Mark notifications as read", "Mark all system notifications as read", "en-US", 13 },
+                    { 14, "Delete notifications", "Delete system notifications", "en-US", 14 },
+                    { 15, "Read traces", "Read system traces", "en-US", 15 },
+                    { 16, "Leer usuarios", "Leer todos los usuarios", "es-ES", 1 },
+                    { 17, "Escribir usuarios", "Crear o actualizar usuarios", "es-ES", 2 },
+                    { 18, "Eliminar usuarios", "Eliminar usuarios", "es-ES", 3 },
+                    { 19, "Leer roles", "Leer roles", "es-ES", 4 },
+                    { 20, "Escribir roles", "Crear o actualizar roles", "es-ES", 5 },
+                    { 21, "Eliminar roles", "Eliminar roles", "es-ES", 6 },
+                    { 22, "Leer perfil", "Leer perfil de usuario", "es-ES", 7 },
+                    { 23, "Escribir perfil", "Actualizar perfil de usuario", "es-ES", 8 },
+                    { 24, "Leer ficheros", "Leer ficheros", "es-ES", 9 },
+                    { 25, "Subir ficheros", "Subir ficheros", "es-ES", 10 },
+                    { 26, "Eliminar ficheros", "Eliminar ficheros", "es-ES", 11 },
+                    { 27, "Leer notificaciones", "Leer notificaciones del sistema", "es-ES", 12 },
+                    { 28, "Marcar notificaciones como leídas", "Marcar las notificaciones del sistema como leídas", "es-ES", 13 },
+                    { 29, "Eliminar notificaciones", "Eliminar notificaciones del sistema", "es-ES", 14 },
+                    { 30, "Leer trazas", "Leer las trazas del sistema", "es-ES", 15 }
                 });
 
             migrationBuilder.InsertData(
@@ -327,7 +324,7 @@ namespace api.Core.Migrations
                     { 4, 1 },
                     { 5, 1 },
                     { 6, 1 },
-                    { 16, 1 },
+                    { 15, 1 },
                     { 7, 2 },
                     { 8, 2 },
                     { 9, 2 },
@@ -335,8 +332,7 @@ namespace api.Core.Migrations
                     { 11, 2 },
                     { 12, 2 },
                     { 13, 2 },
-                    { 14, 2 },
-                    { 15, 2 }
+                    { 14, 2 }
                 });
 
             migrationBuilder.InsertData(
