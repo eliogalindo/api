@@ -30,21 +30,6 @@
     "action": 2
   },
   {
-    "code": "notifications.read",
-    "group": 1,
-    "action": 0
-  },
-  {
-    "code": "notifications.write",
-    "group": 1,
-    "action": 1
-  },
-  {
-    "code": "notifications.delete",
-    "group": 1,
-    "action": 2
-  },
-  {
     "code": "profile.read",
     "group": 1,
     "action": 0
@@ -53,11 +38,6 @@
     "code": "profile.write",
     "group": 1,
     "action": 1
-  },
-  {
-    "code": "profile.delete",
-    "group": 1,
-    "action": 2
   },
   {
     "code": "files.read",
@@ -71,6 +51,21 @@
   },
   {
     "code": "files.delete",
+    "group": 1,
+    "action": 2
+  },
+  {
+    "code": "notifications.read",
+    "group": 1,
+    "action": 0
+  },
+  {
+    "code": "notifications.write",
+    "group": 1,
+    "action": 1
+  },
+  {
+    "code": "notifications.delete",
     "group": 1,
     "action": 2
   },

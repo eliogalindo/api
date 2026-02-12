@@ -38,59 +38,53 @@
   {
     "permissionId": 7,
     "locale": "en-US",
-    "denomination": "Read stocks",
-    "description": "Read stocks"
+    "denomination": "Read profile",
+    "description": "Read user profile"
   },
   {
     "permissionId": 8,
     "locale": "en-US",
-    "denomination": "Write stocks",
-    "description": "Write stocks"
+    "denomination": "Write profile",
+    "description": "Update user profile"
   },
   {
     "permissionId": 9,
-    "locale": "en-US",
-    "denomination": "Delete stocks",
-    "description": "Delete stocks"
-  },
-  {
-    "permissionId": 10,
     "locale": "en-US",
     "denomination": "Read files",
     "description": "Read files"
   },
   {
-    "permissionId": 11,
+    "permissionId": 10,
     "locale": "en-US",
     "denomination": "Write files",
     "description": "Upload files"
   },
   {
-    "permissionId": 12,
+    "permissionId": 11,
     "locale": "en-US",
     "denomination": "Delete files",
     "description": "Delete files"
   },
   {
-    "permissionId": 13,
+    "permissionId": 12,
     "locale": "en-US",
     "denomination": "Read notifications",
     "description": "Read system notifications"
   },
   {
-    "permissionId": 14,
+    "permissionId": 13,
     "locale": "en-US",
     "denomination": "Mark notifications as read",
     "description": "Mark all system notifications as read"
   },
   {
-    "permissionId": 15,
+    "permissionId": 14,
     "locale": "en-US",
     "denomination": "Delete notifications",
     "description": "Delete system notifications"
   }, 
   {
-    "permissionId": 16,
+    "permissionId": 15,
     "locale": "en-US",
     "denomination": "Read traces",
     "description": "Read system traces"
@@ -134,59 +128,53 @@
   {
     "permissionId": 7,
     "locale": "es-ES",
-    "denomination": "Leer inventarios",
-    "description": "Leer inventarios"
+    "denomination": "Leer perfil",
+    "description": "Leer perfil de usuario"
   },
   {
     "permissionId": 8,
     "locale": "es-ES",
-    "denomination": "Escribir inventarios",
-    "description": "Escribir inventarios"
+    "denomination": "Escribir perfil",
+    "description": "Actualizar perfil de usuario"
   },
   {
     "permissionId": 9,
-    "locale": "es-ES",
-    "denomination": "Eliminar inventarios",
-    "description": "Eliminar inventarios"
-  },
-  {
-    "permissionId": 10,
     "locale": "es-ES",
     "denomination": "Leer ficheros",
     "description": "Leer ficheros"
   },
   {
-    "permissionId": 11,
+    "permissionId": 10,
     "locale": "es-ES",
     "denomination": "Subir ficheros",
     "description": "Subir ficheros"
   },
   {
-    "permissionId": 12,
+    "permissionId": 11,
     "locale": "es-ES",
     "denomination": "Eliminar ficheros",
     "description": "Eliminar ficheros"
   },
   {
-    "permissionId": 13,
+    "permissionId": 12,
     "locale": "es-ES",
     "denomination": "Leer notificaciones",
     "description": "Leer notificaciones del sistema"
   },
   {
-    "permissionId": 14,
+    "permissionId": 13,
     "locale": "es-ES",
     "denomination": "Marcar notificaciones como leídas",
     "description": "Marcar las notificaciones del sistema como leídas"
   },
   {
-    "permissionId": 15,
+    "permissionId": 14,
     "locale": "es-ES",
     "denomination": "Eliminar notificaciones",
     "description": "Eliminar notificaciones del sistema"
   },
   {
-    "permissionId": 16,
+    "permissionId": 15,
     "locale": "es-ES",
     "denomination": "Leer trazas",
     "description": "Leer las trazas del sistema"
