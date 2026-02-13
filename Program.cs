@@ -78,9 +78,6 @@ builder.Services.AddEmailConfiguration(builder.Configuration);
 // Add Rate-Limiting configuration
 builder.Services.AddRateLimiting();
 
-// Add Output Cache configuration
-//builder.Services.AddOutputCache(builder.Configuration);
-
 var app = builder.Build(); // Build the app after adding services
 
 // Runs migrations on application startup
@@ -121,9 +118,6 @@ app.UseAuthorization();
 
 // Map controllers
 app.MapControllers();
-
-// Add Output Cache middleware
-//app.UseOutputCache();
 
 // Map SignalR hubs
 app.UseSignalREndpoints();
