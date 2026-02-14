@@ -5,7 +5,9 @@ using api.Core.Interfaces.Services;
 using api.Core.Models;
 using api.Core.Services;
 using api.Modules.Files.Interfaces.Services;
+using api.Modules.Roles.DTOs;
 using api.Modules.Roles.Enums;
+using api.Modules.Roles.Interfaces.Services;
 using api.Modules.Roles.Models;
 using api.Modules.Traces.Enums;
 using api.Modules.Traces.Interfaces.Services;
@@ -21,7 +23,8 @@ public class UsersService(
     IUnitOfWork unitOfWork,
     ITracesService tracesService,
     ILogger<UsersService> logger,
-    IFilesService filesService)
+    IFilesService filesService,
+    IRolesService rolesService)
     : Service<User, CreateUserDto, UpdateUserDto, UserDto>(unitOfWork, logger), IUsersService
 {
     protected override IRepository<User> Repository => UnitOfWork.UsersRepository;
@@ -117,7 +120,7 @@ public class UsersService(
 
     public async Task<ServiceResult<User>> RegisterUser(CreateUserDto createUserDto)
     {
-        var rolesRelated = await UnitOfWork.RolesRepository.FindAllByIdAsync(createUserDto.Roles);
+        var rolesRelated = await rolesService.GetAllByIdsAsync(createUserDto.Roles);
         return await CreateUserCoreAsync(createUserDto, rolesRelated, null);
     }
 
@@ -142,14 +145,14 @@ public class UsersService(
             List<Role> rolesRelated;
             if (searchParamsDto.AllSelected == true)
             {
-                // Find all permissions whether filtered or not
-                var (roles, _) = await UnitOfWork.RolesRepository.FindAllAsync(searchParamsDto, true);
-                rolesRelated = roles;
+                // Find all roles matching the current filter
+                var enabledOnly = (searchParamsDto as RolesSearchParamsDto)?.EnabledOnly;
+                rolesRelated = await rolesService.GetAllByFilterAsync(searchParamsDto.Filter, enabledOnly);
             }
             else
             {
                 // Find all roles that the user is being assigned to
-                rolesRelated = await UnitOfWork.RolesRepository.FindAllByIdAsync(createUserDto.Roles);
+                rolesRelated = await rolesService.GetAllByIdsAsync(createUserDto.Roles);
 
                 // Make sure all requested roles exist
                 if (rolesRelated.Count != createUserDto.Roles.Count)
@@ -241,14 +244,14 @@ public class UsersService(
             List<Role> rolesRelated = [];
             if (searchParamsDto.AllSelected == true)
             {
-                var (roles, _) = await UnitOfWork.RolesRepository.FindAllAsync(searchParamsDto, true);
-                rolesRelated = roles;
+                var enabledOnly = (searchParamsDto as RolesSearchParamsDto)?.EnabledOnly;
+                rolesRelated = await rolesService.GetAllByFilterAsync(searchParamsDto.Filter, enabledOnly);
             }
             else
             {
                 if (updateUserDto.Roles is { Count: > 0 })
                 {
-                    rolesRelated = await UnitOfWork.RolesRepository.FindAllByIdAsync(updateUserDto.Roles);
+                    rolesRelated = await rolesService.GetAllByIdsAsync(updateUserDto.Roles);
 
                     if (rolesRelated.Count != updateUserDto.Roles.Distinct().Count())
                     {

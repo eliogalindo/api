@@ -8,4 +8,6 @@ public interface IRolesService : IService<Role, CreateRoleDto, UpdateRoleDto, Ro
 {
     Task<RoleDto?> FindByDenomination(string denomination);
     Task<List<RoleDto>> FindByEnabled(bool enabled);
+    Task<List<Role>> GetAllByIdsAsync(List<int> ids);
+    Task<List<Role>> GetAllByFilterAsync(string? filter = null, bool? enabled = null);
 }

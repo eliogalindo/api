@@ -53,6 +53,23 @@ public class RolesRepository(AppDbContext dbContext, ILocalizationService locali
             .ToListAsync();
     }
 
+    public async Task<List<Role>> FindAllByFilterAsync(string? filter = null, bool? enabledOnly = false)
+    {
+        var query = DbSet.OfType<ISoftDeletable>()
+            .Where(e => e.Deletable == true && e.DeletedAt == null)
+            .Cast<Role>();
+        
+        if (!string.IsNullOrWhiteSpace(filter))
+            query = query.Where(r =>
+                r.Denomination.Contains(filter) ||
+                r.Description.Contains(filter));
+
+        if (enabledOnly == true)
+            query = query.Where(r => r.Enabled == true);
+
+        return await query.ToListAsync();
+    }
+    
     // Override base methods to always include permissions
     public override async Task<(List<Role>Entities, int Count)> FindAllAsync(SearchParamsDto searchParamsDto,
         bool includeRelations = false)
@@ -68,8 +85,8 @@ public class RolesRepository(AppDbContext dbContext, ILocalizationService locali
                 r.Description.Contains(searchParamsDto.Filter));
 
         // Apply filtering based on Enabled property if provided
-        if (searchParamsDto is RolesSearchParamsDto { Enabled: true or false } rolesSearchParamsDto)
-            query = query.Where(r => r.Enabled == rolesSearchParamsDto.Enabled);
+        if (searchParamsDto is RolesSearchParamsDto { EnabledOnly: true })
+            query = query.Where(r => r.Enabled == true);
 
         // Apply sorting
         if (!string.IsNullOrWhiteSpace(searchParamsDto.OrderBy))
@@ -98,8 +115,7 @@ public class RolesRepository(AppDbContext dbContext, ILocalizationService locali
         // Include permissions and permission translations
         if (includeRelations)
             query = query.Include(r => r.Permissions)
-                .ThenInclude(t =>
-                    t.Translations.Where(pt => pt.Locale == _currentCulture));
+                .ThenInclude(t => t.Translations.Where(pt => pt.Locale == _currentCulture));
 
         var count = await query.CountAsync();
 
