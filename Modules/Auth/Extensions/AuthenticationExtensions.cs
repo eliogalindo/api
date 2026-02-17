@@ -21,15 +21,14 @@ public static class AuthenticationExtensions
             })
             .AddCookie(options =>
             {
-                options.Cookie.HttpOnly = true;
-                // Then use the bound settings
+                options.Cookie.HttpOnly = cookieConfiguration.HttpOnly;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(cookieConfiguration.ExpirationMinutes);
-                options.SlidingExpiration = true;
-                options.Cookie.Name = "session";
-                options.Cookie.SameSite = SameSiteMode.Lax;
+                options.SlidingExpiration = cookieConfiguration.SlidingExpiration;
+                options.Cookie.Name = cookieConfiguration.Name;
+                options.Cookie.SameSite = Enum.Parse<SameSiteMode>(cookieConfiguration.SameSite);
                 options.Cookie.Domain = cookieConfiguration.Domain ?? string.Empty;
-                options.Cookie.Path = "/";
-                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+                options.Cookie.Path = cookieConfiguration.Path;
+                options.Cookie.SecurePolicy = Enum.Parse<CookieSecurePolicy>(cookieConfiguration.SecurePolicy);
 
                 options.Events.OnRedirectToLogin = context =>
                 {
