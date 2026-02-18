@@ -63,7 +63,8 @@ public class EmailService(
 
     private static string GenerateEmail(string templatePath, object data)
     {
-        var templateContent = File.ReadAllText(templatePath);
+        var fullPath = Path.Combine(AppContext.BaseDirectory, templatePath);
+        var templateContent = File.ReadAllText(fullPath);
         var template = Handlebars.Compile(templateContent);
         return template(data);
     }

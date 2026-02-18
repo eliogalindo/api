@@ -30,8 +30,7 @@ public static class CorsExtensions
                     corsPolicyBuilder
                         .WithOrigins(configuredOrigins) // Full URLs with schemes 
                         .AllowCredentials()
-                        .WithHeaders("Content-Type", "Accept-Language", "X-User-Locale", "Cache-Control", "Age",
-                            "ETag") // More restrictive
+                        .WithHeaders("Content-Type", "Accept-Language", "X-User-Locale", "Cache-Control", "X-Signalr-User-Agent","X-Requested-With", "Age", "ETag") // More restrictive
                         .WithMethods("GET", "POST", "PUT", "PATCH", "DELETE");
             });
         });
