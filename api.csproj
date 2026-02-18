@@ -94,4 +94,9 @@
             <Generator>ResXFileCodeGenerator</Generator>
         </EmbeddedResource>
     </ItemGroup>
+    <ItemGroup>
+        <None Update="Modules/Email/Templates/**/*.hbs">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
 </Project>
